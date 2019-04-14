@@ -333,6 +333,7 @@ ASALocalRun/
 .localhistory/
 
 # Will's Stuff
+SFML
 **/*.txt
 **/*.dat
 **/output.md
