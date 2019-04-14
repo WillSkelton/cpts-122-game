@@ -13,7 +13,8 @@
 1. Push local changes to remote branch
 2. Code review
 3. Notify group before merging pull request
-4. Nobody merges their own pull requests
+4. Pull Requests must be approved by one other member before being merged
+5. Approved PRs need re-approval when updated
 
 #### Branches:
  - `master` branch is the production branch
