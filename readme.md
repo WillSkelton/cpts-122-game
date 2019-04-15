@@ -1,12 +1,30 @@
 # Y E E T
 
 ## Contributors:
-- Will Skelton
-- Chris Anthony
-- Brian Coyne
-- Bryce Turley
+- Brian Coyne $\rightarrow$ GitHub: [coynebp](https://github.com/coynebp)
+- Bryce Turley $\rightarrow$ GitHub: [bturley2](https://github.com/bturley2)
+- Chris Anthony $\rightarrow$ GitHub: [C-Antho](https://github.com/C-Antho)
+- Will Skelton $\rightarrow$ GitHub: [WillSkelton](https://github.com/willskelton)
 
 ## Description:
+Infinite Runner game
+
+## Goals:
+
+#### MVP:
+- [ ] Gravity controls
+- [ ] Wrapping background
+- [ ] Physics engine
+- [ ] Regular obstacles 
+- [ ] art/assets
+- [ ] Collision detection
+
+#### Stretch Goals:
+- [ ] Screen Shake
+- [ ] Shooting/ breakable objects
+- [ ] Enemies/ moving obstacle
+- [ ] Animations
+- [ ] Music
 
 ## Git Workflow:
 #### General:
