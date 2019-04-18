@@ -1,10 +1,10 @@
 # Y E E T
 
 ## Contributors:
-- Brian Coyne $\rightarrow$ GitHub: [coynebp](https://github.com/coynebp)
-- Bryce Turley $\rightarrow$ GitHub: [bturley2](https://github.com/bturley2)
-- Chris Anthony $\rightarrow$ GitHub: [C-Antho](https://github.com/C-Antho)
-- Will Skelton $\rightarrow$ GitHub: [WillSkelton](https://github.com/willskelton)
+- Brian Coyne: [coynebp](https://github.com/coynebp)
+- Bryce Turley: [bturley2](https://github.com/bturley2)
+- Chris Anthony: [C-Antho](https://github.com/C-Antho)
+- Will Skelton: [WillSkelton](https://github.com/willskelton)
 
 ## Description:
 Infinite Runner game
