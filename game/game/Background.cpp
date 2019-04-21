@@ -3,7 +3,7 @@
 Background::Background(){
 	
 	if (!this->texture.loadFromFile("../../Enemies/Background.png")) {
-		std::cout << "error" << std::endl;
+		std::cout << "ERROR: CAN'T LOAD BACKGROUND IMAGE" << std::endl;
 
 	}
 	else {
@@ -24,9 +24,25 @@ Background::~Background(){
 	
 }
 
+void moveLeft(float delta_t) {
+
+}
+
+
+
 void Background::showBackground(sf::RenderWindow &window){
 		
 	window.draw(this->sprite1);
 	window.draw(this->sprite2);
+
+}
+
+
+Sprite * Background::getSprite1(void) {
+	return &(this->sprite1);
+}
+
+Sprite * Background::getSprite2(void) {
+	return &(this->sprite2);
 
 }
