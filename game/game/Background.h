@@ -3,6 +3,7 @@
 using sf::Sprite;
 using sf::Texture;
 
+
 class Background {
 
 // CTOR
@@ -13,6 +14,12 @@ public:
 	~Background();
 
 	void showBackground(sf::RenderWindow &window);
+
+	void moveLeft(float delta_t);
+
+	Sprite * getSprite1(void);
+	Sprite * getSprite2(void);
+
 
 private:
 
