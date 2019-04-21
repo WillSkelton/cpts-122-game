@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "Background.h"
 
 /*
 Final Game Project Created and Developed by:
@@ -15,6 +16,11 @@ The player's goal is to avoid them for as long as possible.
 int main(int argc, char argv[]) {
 	
 	Game game;
+
+	
+
+	Background background();
+	
 
 	
 	system("pause");
