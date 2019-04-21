@@ -26,7 +26,12 @@ private:
 
 	//handles current state of all keys (ie pressed or not)
 	void keystateHandler(sf::RenderWindow &window);
+	
 
+	void updateLocations();
+
+	//contains master texture with all the enemies
+	sf::Texture masterTexture;
 };
 
 
