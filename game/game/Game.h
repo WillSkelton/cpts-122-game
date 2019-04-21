@@ -3,6 +3,7 @@
 #define GAME_H
 
 #include "Header.h"
+#include "Player.h"
 
 
 /*
