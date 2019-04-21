@@ -1,24 +1,22 @@
-#include <SFML/Graphics.hpp>
+#include "Game.h"
 
-int main()
-{
-	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
+/*
+Final Game Project Created and Developed by:
+Will Skelton
+Bryce Turley
+Brian Coyne
+Chris Anthony
 
-	while (window.isOpen())
-	{
-		sf::Event event;
-		while (window.pollEvent(event))
-		{
-			if (event.type == sf::Event::Closed)
-				window.close();
-		}
+This game is an infinite runner in which pressing the space bar causes the character to reverse gravity.
+Obstacles will be created offscreen to the right and move across the screen to the left.
+The player's goal is to avoid them for as long as possible.
+*/
 
-		window.clear();
-		window.draw(shape);
-		window.display();
-	}
+int main(int argc, char argv[]) {
+	
+	Game game;
 
+	
+	system("pause");
 	return 0;
 }
