@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "Background.h"
 
 Game::Game() {
 	//runs game automatically
@@ -10,6 +11,9 @@ void Game::gameLoop() {
 
 	//create window
 	sf::RenderWindow window;
+	
+	Background background;
+
 	window.create(sf::VideoMode(800, 800), "Game Window");
 
 	
@@ -23,6 +27,9 @@ void Game::gameLoop() {
 	while (window.isOpen()) {
 		sf::Event event;
 		window.clear(sf::Color::Black);	//clear buffer for next frame
+
+		background.showBackground(window);
+
 
 
 
