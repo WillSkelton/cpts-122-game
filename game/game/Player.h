@@ -10,14 +10,18 @@ using sf::Rect;
 using sf::IntRect;
 using sf::Sprite;
 using sf::Texture;
+using std::cout;
+using std::cin;
+using std::endl;
 
 
-class Player : public Obstacle
+class Player1
 {
 public:
-	Player();
-	virtual sf::Rect<int> getRect() = 0;
-	virtual void update_pos(float delta_t,sf::RenderWindow &window);
+	Player1();
+	Rect<int> getRect();
+	void setposition(int x, int y);
+	void move_player(float delta_t, sf::RenderWindow &window);
 	void gravity_control();
 
 
@@ -34,22 +38,4 @@ private:
 
 };
 
-Player::Player()
-{
-
-}
-
-sf::Rect<int> getRect()
-{
-
-}
-void Player::update_pos(float delta_t, sf::RenderWindow &window)\
-{
-
-}
-
-void Player::gravity_control()
-{
-
-}
 #endif

@@ -1,11 +1,13 @@
 #include "Game.h"
 #include "Background.h"
+#include "Player.h"
 
 Game::Game() {
 	//initialize the master texture
-	if (!this->masterTexture.loadFromFile("../../Enemies/enemies_spritesheet.png")) {
+	if (!this->masterTexture.loadFromFile(".../.../.../Enemies/enemies_spritesheet.png")) {
 		std::cout << "Master Texture failed to load. see Game.cpp constructor." << std::endl;
 	}
+
 
 	//runs game automatically
 	gameLoop();
@@ -15,6 +17,7 @@ Game::Game() {
 void Game::gameLoop() {
 	//clock used to check frame times
 	sf::Clock clock;
+	Player1 p1;
 	float delta_t = 0;
 
 	//create window
@@ -71,6 +74,14 @@ void Game::eventHandler(sf::Event &event, sf::RenderWindow &window) {
 		//handles user closing window
 		case sf::Event::Closed:
 			window.close();
+			break;
+		case sf::Event::KeyPressed:
+			if (event.key.code == sf::Keyboard::Space)
+			{
+				//Flip character and invert gravity
+
+				
+			}
 			break;
 		//we want to do nothing if there is a undefined event
 		default:
