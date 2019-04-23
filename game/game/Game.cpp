@@ -17,12 +17,14 @@ Game::Game() {
 void Game::gameLoop() {
 	//clock used to check frame times
 	sf::Clock clock;
-	Player p1;
+
 	float delta_t = 0;
 
 	//create window
 	sf::RenderWindow window;
-	
+	Player p1(*(new Vector2f(window.getSize().x / 50,
+		window.getSize().y / 10)),*(new Vector2f(50,50)));
+
 	Background background;
 
 	window.create(sf::VideoMode(800, 800), "Game Window");
@@ -55,7 +57,7 @@ void Game::gameLoop() {
 		background.showBackground(window);
 
 		//check collisions (player with obstacle list)
-		
+		window.draw(p1.);
 
 
 		window.display();	//display next frame

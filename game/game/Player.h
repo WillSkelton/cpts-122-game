@@ -19,11 +19,12 @@ using std::endl;
 class Player
 {
 public:
-	Player();
-	Rect<int> getRect();
-	void setposition();
+	Player(Vector2f &position, const Vector2f &size);
+	Rect<int> getRect(Vector2f &position, const Vector2f &size);
+	Sprite & getSprite();
 	void move_player(float delta_t, sf::RenderWindow &window);
-	void gravity_control();
+	void gravity_control(Rect<int> *player, Sprite *pSprite, Texture *pTexture);
+
 
 
 private:
@@ -36,6 +37,8 @@ private:
 
 	int width;
 	int length;
+
+	void setposition(Rect<int> *player, Sprite *pSprite, Texture *pTexture);
 
 };
 
