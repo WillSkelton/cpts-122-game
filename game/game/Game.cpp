@@ -10,14 +10,14 @@ Game::Game() {
 
 
 	//runs game automatically
-	gameLoop();
+	//gameLoop();
 }
 
 //controlls game functionality
 void Game::gameLoop() {
 	//clock used to check frame times
 	sf::Clock clock;
-	Player1 p1;
+	Player p1;
 	float delta_t = 0;
 
 	//create window

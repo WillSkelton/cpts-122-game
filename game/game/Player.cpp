@@ -1,8 +1,8 @@
 #include "Player.h"
 
-Player1::Player1() //instantiate sprite
+Player::Player() //instantiate sprite
 {
-	if (!pTexture.loadFromFile("../../cpts-122-game/Player/Player.png"))
+	if (!pTexture.loadFromFile("../../../../cpts-122-game/Player/Player.png"))
 	{
 		// error...
 		cout << "Player image load error" << endl;
@@ -12,22 +12,18 @@ Player1::Player1() //instantiate sprite
 		pSprite.setTexture(pTexture);
 	}
 }
-void Player1::setposition(int x, int y)
-{
 
-}
-
-Rect<int> Player1::getRect() // generate hitbox
+Rect<int> Player::getRect() // generate hitbox
 {
 	Rect<int> sol;
 	return sol;
 }
-void Player1::move_player(float delta_t, sf::RenderWindow &window) // update position
+void Player::move_player(float delta_t, sf::RenderWindow &window) // update position
 {
 
 }
 
-void Player1::gravity_control()
+void Player::gravity_control()
 {
 
 }

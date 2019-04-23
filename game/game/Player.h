@@ -10,17 +10,18 @@ using sf::Rect;
 using sf::IntRect;
 using sf::Sprite;
 using sf::Texture;
+using sf::Vector2f;
 using std::cout;
 using std::cin;
 using std::endl;
 
 
-class Player1
+class Player
 {
 public:
-	Player1();
+	Player();
 	Rect<int> getRect();
-	void setposition(int x, int y);
+	void setposition();
 	void move_player(float delta_t, sf::RenderWindow &window);
 	void gravity_control();
 

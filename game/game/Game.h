@@ -16,11 +16,12 @@ class Game {
 public:
 	Game();
 
-	
-
-private:
 	//controlls all game functionality
 	void gameLoop();
+
+private:
+	////controlls all game functionality
+	//void gameLoop();
 
 	//handles all events (such as mouse clicks or button presses)
 	void eventHandler(sf::Event &event, sf::RenderWindow &window);
