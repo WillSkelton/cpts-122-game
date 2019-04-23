@@ -1,6 +1,6 @@
 #include "Player.h"
 
-Player::Player(const Vector2f &position, const Vector2f &size) //instantiate sprite
+Player::Player() //instantiate sprite
 {
 	if (!pTexture.loadFromFile("../../cpts-122-game/Player/Player.png"))
 	{
@@ -22,7 +22,7 @@ void Player::setposition(Rect<int> *player, Sprite *pSprite, Texture *pTexture)
 	
 }
 
-Rect<int> Player::getRect(const Vector2f &position, const Vector2f &size) // generate hitbox
+Rect<int> Player::getRect(Vector2f &position, const Vector2f &size) // generate hitbox
 {
 	Rect<int> sol;
 	return sol;

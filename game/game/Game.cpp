@@ -22,8 +22,7 @@ void Game::gameLoop() {
 
 	//create window
 	sf::RenderWindow window;
-	Player p1(*(new Vector2f(window.getSize().x / 50,
-		window.getSize().y / 10)),*(new Vector2f(50,50)));
+	Player p1();
 
 	Background background;
 
@@ -57,7 +56,7 @@ void Game::gameLoop() {
 		background.showBackground(window);
 
 		//check collisions (player with obstacle list)
-		window.draw(p1.);
+		//window.draw(p1.getSprite);
 
 
 		window.display();	//display next frame

@@ -19,7 +19,7 @@ using std::endl;
 class Player
 {
 public:
-	Player(Vector2f &position, const Vector2f &size);
+	Player();
 	Rect<int> getRect(Vector2f &position, const Vector2f &size);
 	Sprite & getSprite();
 	void move_player(float delta_t, sf::RenderWindow &window);
