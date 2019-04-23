@@ -50,6 +50,7 @@ void Game::gameLoop() {
 		background.showBackground(window);
 
 		//check collisions (player with obstacle list)
+
 		
 
 
