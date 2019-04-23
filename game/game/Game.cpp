@@ -24,6 +24,7 @@ void Game::gameLoop() {
 
 	window.create(sf::VideoMode(800, 800), "Game Window");
 
+
 	//disable autorepeating keypress function in Windows machines
 	window.setKeyRepeatEnabled(false);
 
