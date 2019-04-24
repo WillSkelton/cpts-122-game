@@ -1,7 +1,7 @@
 #pragma once
 #ifndef HEADER_H
 #define HEADER_H
-#define BACKGROUNDSCROLLSPEED .1
+#define BACKGROUNDSCROLLSPEED 1
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
