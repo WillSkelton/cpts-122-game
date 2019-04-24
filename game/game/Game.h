@@ -32,6 +32,7 @@ private:
 
 	//contains master texture with all the enemies
 	sf::Texture masterTexture;
+	sf::Texture gameOver;
 };
 
 

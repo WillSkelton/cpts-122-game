@@ -9,7 +9,9 @@ Game::Game() {
 	if (!this->masterTexture.loadFromFile("enemies_spritesheet.png")) {
 		std::cout << "Master Texture failed to load. see Game.cpp constructor." << std::endl;
 	}
-
+	if (!this->gameOver.loadFromFile("gameover.png")) {
+		std::cout << "GameOver Texture failed to load. see Game.cpp constructor." << std::endl;
+	}
 	//runs game automatically
 	gameLoop();
 }
@@ -36,6 +38,23 @@ void Game::gameLoop() {
 	MadBlock mb3(masterTexture);
 	MadBlock mb4(masterTexture);
 
+	//handle the game_over screen
+	bool game_over = false;
+	sf::Sprite gameOverSprite;
+	gameOverSprite.setTexture(this->gameOver);
+	gameOverSprite.setTextureRect(sf::IntRect(0, 0, 800, 800));
+	gameOverSprite.setPosition(90,50);
+
+	//create list of enemies
+	std::vector<Obstacle *> enemyList;
+	enemyList.push_back(&slime1);
+	enemyList.push_back(&slime2);
+	enemyList.push_back(&slime3);
+	enemyList.push_back(&slime4);
+	enemyList.push_back(&mb1);
+	enemyList.push_back(&mb2);
+	enemyList.push_back(&mb3);
+	enemyList.push_back(&mb4);
 
 
 	window.create(sf::VideoMode(800, 800), "Game Window");
@@ -49,7 +68,7 @@ void Game::gameLoop() {
 	//game loop
 	while (window.isOpen()) {
 		sf::Event event;
-		window.clear(sf::Color::Black);	//clear buffer for next frame
+		window.clear(sf::Color::White);	//clear buffer for next frame
 
 		keystateHandler(window);
 		
@@ -63,36 +82,44 @@ void Game::gameLoop() {
 		//update delta_t in milliseconds();
 		delta_t = (clock.getElapsedTime().asMilliseconds());
 
-		//update all parts of the screen (player, obstacle list, and )
-		background.showBackground(window);
-		player.draw(window);
+		if (!game_over) {
+			//update all parts of the screen (player, obstacle list, and )
+			background.showBackground(window);
+			player.draw(window);
 
-		slime1.showSlime(window);
-		slime2.showSlime(window);
-		slime3.showSlime(window);
-		slime4.showSlime(window);
+			slime1.showSlime(window);
+			slime2.showSlime(window);
+			slime3.showSlime(window);
+			slime4.showSlime(window);
 
-		mb1.showMadBlock(window);
-		mb2.showMadBlock(window);
-		mb3.showMadBlock(window);
-		mb4.showMadBlock(window);
+			mb1.showMadBlock(window);
+			mb2.showMadBlock(window);
+			mb3.showMadBlock(window);
+			mb4.showMadBlock(window);
 
 
-		//move all items across screen
-		background.moveLeft(YEEHAW, window);
-		player.movePlayer(1);
-		mb1.moveLeft(YEEHAW);
-		mb2.moveLeft(YEEHAW);
-		mb3.moveLeft(YEEHAW);
-		mb4.moveLeft(YEEHAW);
+			//move all items across screen
+			background.moveLeft(YEEHAW, window);
+			player.movePlayer(1);
+			mb1.moveLeft(YEEHAW);
+			mb2.moveLeft(YEEHAW);
+			mb3.moveLeft(YEEHAW);
+			mb4.moveLeft(YEEHAW);
 
-		slime1.moveLeft(YEEHAW);
-		slime2.moveLeft(YEEHAW);
-		slime3.moveLeft(YEEHAW);
-		slime4.moveLeft(YEEHAW);
+			slime1.moveLeft(YEEHAW);
+			slime2.moveLeft(YEEHAW);
+			slime3.moveLeft(YEEHAW);
+			slime4.moveLeft(YEEHAW);
+		}
 
 		//check collisions (player with obstacle list)
-
+		for (int i = 0; i < enemyList.size(); ++i) {
+			if (player.getRect().intersects(enemyList[i]->getRect())) {
+				game_over = true;
+				
+				window.draw(gameOverSprite);
+			}
+		}
 		
 
 
@@ -102,7 +129,7 @@ void Game::gameLoop() {
 		clock.restart();
 
 
-		YEEHAW += 0.005;
+		YEEHAW = (YEEHAW <= 15) ? YEEHAW + 0.005 : 15;
 	}
 }
 
@@ -119,6 +146,8 @@ void Game::eventHandler(Player & player, sf::Event &event, sf::RenderWindow &win
 		case sf::Event::KeyPressed:
 			if (event.key.code == sf::Keyboard::Space)
 				player.flip();
+			if (event.key.code == sf::Keyboard::Escape)
+				window.close();
 			break;
 		//we want to do nothing if there is a undefined event
 		default:
