@@ -1,5 +1,7 @@
 #include "Game.h"
 #include "Background.h"
+#include "madBlock.h"
+#include "Slime.h"
 
 
 Game::Game() {
@@ -24,6 +26,17 @@ void Game::gameLoop() {
 	sf::RenderWindow window;
 	Player player;
 	Background background;
+	Slime slime1(masterTexture);
+	Slime slime2(masterTexture);
+	Slime slime3(masterTexture);
+	Slime slime4(masterTexture);
+
+	MadBlock mb1(masterTexture);
+	MadBlock mb2(masterTexture);
+	MadBlock mb3(masterTexture);
+	MadBlock mb4(masterTexture);
+
+
 
 	window.create(sf::VideoMode(800, 800), "Game Window");
 
@@ -54,9 +67,29 @@ void Game::gameLoop() {
 		background.showBackground(window);
 		player.draw(window);
 
+		slime1.showSlime(window);
+		slime2.showSlime(window);
+		slime3.showSlime(window);
+		slime4.showSlime(window);
+
+		mb1.showMadBlock(window);
+		mb2.showMadBlock(window);
+		mb3.showMadBlock(window);
+		mb4.showMadBlock(window);
+
+
 		//move all items across screen
 		background.moveLeft(YEEHAW, window);
 		player.movePlayer(1);
+		mb1.moveLeft(YEEHAW);
+		mb2.moveLeft(YEEHAW);
+		mb3.moveLeft(YEEHAW);
+		mb4.moveLeft(YEEHAW);
+
+		slime1.moveLeft(YEEHAW);
+		slime2.moveLeft(YEEHAW);
+		slime3.moveLeft(YEEHAW);
+		slime4.moveLeft(YEEHAW);
 
 		//check collisions (player with obstacle list)
 
@@ -68,7 +101,8 @@ void Game::gameLoop() {
 		//reset time for this frame
 		clock.restart();
 
-		YEEHAW += 0.02;
+
+		YEEHAW += 0.005;
 	}
 }
 
