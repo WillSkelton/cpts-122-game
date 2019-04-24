@@ -16,6 +16,8 @@ void Game::gameLoop() {
 	//clock used to check frame times
 	sf::Clock clock;
 	float delta_t = 0;
+	
+	float yeet = 0.1;
 
 	//create window
 	sf::RenderWindow window;
@@ -45,21 +47,24 @@ void Game::gameLoop() {
 		}
 
 		//update delta_t in milliseconds();
-		delta_t = clock.getElapsedTime().asMilliseconds();
+		delta_t = (clock.getElapsedTime().asMilliseconds());
 
 		//update all parts of the screen (player, obstacle list, and )
-		//background.showBackground(window);
-		background.moveLeft(4, window);
+		background.showBackground(window);
+
+		float min = (delta_t <= MAX_FRAME_TIME) ? delta_t : (float)MAX_FRAME_TIME;
+
+		background.moveLeft(INITIAL_SPEED * yeet, window);
 
 		//check collisions (player with obstacle list)
-
-		
 
 
 		window.display();	//display next frame
 
 		//reset time for this frame
 		clock.restart();
+
+		yeet += 0.02;
 	}
 }
 

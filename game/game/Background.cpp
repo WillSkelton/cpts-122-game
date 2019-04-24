@@ -2,7 +2,7 @@
 
 Background::Background(){
 	
-	/*if (!this->texture.loadFromFile("../../Enemies/Background.png")) {
+	if (!this->texture.loadFromFile("../../Enemies/Background.png")) {
 		std::cout << "ERROR: CAN'T LOAD BACKGROUND IMAGE" << std::endl;
 
 	}
@@ -16,31 +16,8 @@ Background::Background(){
 		this->sprite1.setPosition(sf::Vector2f(0, 0));
 		this->sprite2.setPosition(sf::Vector2f(this->sprite1.getGlobalBounds().width, 0));
 
-	}*/
-
-	if (!this->texture.loadFromFile("../../Enemies/BGTest1.png")) {
-		std::cout << "ERROR: CAN'T LOAD BACKGROUND IMAGE" << std::endl;
-
 	}
-	else {
-		this->sprite1.setTexture(texture);
 
-		this->sprite1.scale(0.74, 0.74);
-		
-		this->sprite1.setPosition(sf::Vector2f(0, 0));
-	}
-	if (!this->texture.loadFromFile("../../Enemies/BGTest2.png")) {
-		std::cout << "ERROR: CAN'T LOAD BACKGROUND IMAGE" << std::endl;
-
-	}
-	else {
-		this->sprite2.setTexture(texture);
-
-		this->sprite2.scale(0.74, 0.74);
-
-		this->sprite2.setPosition(sf::Vector2f(this->sprite1.getGlobalBounds().width, 0));
-
-	}
 }
 
 // DTOR
@@ -63,12 +40,6 @@ void Background::showBackground(sf::RenderWindow &window){
 
 void Background::moveLeft(float delta_t, sf::RenderWindow &window) {
 
-	/*std::cout << "Sprite 1 Position: (" << this->sprite1.getPosition().x << ", " << this->sprite1.getPosition().y << ")" << std::endl;
-	std::cout << "Sprite 2 Position: (" << this->sprite2.getPosition().x << ", " << this->sprite2.getPosition().y << ")" << std::endl;*/
-
-
-	window.draw(this->sprite1);
-	window.draw(this->sprite2);
 
 	this->sprite1.move(sf::Vector2f((-1 * delta_t * BACKGROUNDSCROLLSPEED), 0));
 	this->sprite2.move(sf::Vector2f((-1 * delta_t * BACKGROUNDSCROLLSPEED), 0));
@@ -87,9 +58,6 @@ void Background::moveLeft(float delta_t, sf::RenderWindow &window) {
 		this->sprite1 = this->sprite2;
 
 		this->sprite2 = temp;
-
-		std::cout << "Sprite 1 Position: (" << this->sprite1.getPosition().x << ", " << this->sprite1.getPosition().y << ")" << std::endl;
-		std::cout << "Sprite 2 Position: (" << this->sprite2.getPosition().x << ", " << this->sprite2.getPosition().y << ")" << std::endl;
 		
 		//this->sprite2.move(sf::Vector2f(this->sprite1.getGlobalBounds().width, 0));
 
@@ -99,10 +67,6 @@ void Background::moveLeft(float delta_t, sf::RenderWindow &window) {
 
 
 		this->sprite2.setPosition(sf::Vector2f((xpos), 0));
-
-		std::cout << "Sprite 1 Position: (" << this->sprite1.getPosition().x << ", " << this->sprite1.getPosition().y << ")" << std::endl;
-		std::cout << "Sprite 2 Position: (" << this->sprite2.getPosition().x << ", " << this->sprite2.getPosition().y << ")" << std::endl;
-
 
 	}
 
