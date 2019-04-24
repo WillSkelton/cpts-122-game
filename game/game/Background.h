@@ -15,7 +15,7 @@ public:
 
 	void showBackground(sf::RenderWindow &window);
 
-	void moveLeft(float delta_t);
+	void moveLeft(float delta_t, sf::RenderWindow &window);
 
 	Sprite * getSprite1(void);
 	Sprite * getSprite2(void);

@@ -48,7 +48,8 @@ void Game::gameLoop() {
 		delta_t = clock.getElapsedTime().asMilliseconds();
 
 		//update all parts of the screen (player, obstacle list, and )
-		background.showBackground(window);
+		//background.showBackground(window);
+		background.moveLeft(4, window);
 
 		//check collisions (player with obstacle list)
 
